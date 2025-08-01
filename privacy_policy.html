@@ -222,13 +222,13 @@
 
     <div class="summary-box">
       <h2>Privacy at a Glance</h2>
-      <p>ChessView is designed with privacy in mind. We don't use ads, trackers, or analytics. We only process the data you explicitly provide to deliver our chess analysis features.</p>
+      <p>ChessView prioritizes your privacy. We don't use ads, trackers, or analytics. We only process data you provide to deliver chess analysis features.</p>
     </div>
 
     <div class="card">
       <h2>
         <span class="icon">ℹ️</span>
-        Information We Collect and Use
+        Information We Collect
       </h2>
       
       <p>ChessView collects minimal information only when you actively use specific features:</p>
@@ -243,19 +243,19 @@
         </thead>
         <tbody>
           <tr>
+            <td><strong>Local Game Data</strong></td>
+            <td>Store and display your chess games</td>
+            <td>When you import or create games</td>
+          </tr>
+          <tr>
             <td><strong>Chess.com Username</strong></td>
             <td>To retrieve your games from Chess.com</td>
-            <td>When you enter your username to import games</td>
+            <td>When you use Chess.com integration</td>
           </tr>
           <tr>
             <td><strong>Chess Positions</strong></td>
             <td>To provide AI analysis of chess positions</td>
             <td>When you use the AI analyzer feature</td>
-          </tr>
-          <tr>
-            <td><strong>PGN Game Data</strong></td>
-            <td>To display and analyze your chess games</td>
-            <td>When you import or view PGN files</td>
           </tr>
         </tbody>
       </table>
@@ -267,28 +267,87 @@
 
     <div class="card">
       <h2>
+        <span class="icon">💾</span>
+        Local Game Data
+      </h2>
+      <p>ChessView stores your chess games locally on your device. This includes:</p>
+      <ul>
+        <li>Chess game moves and positions</li>
+        <li>Game metadata (date, time, player names you enter)</li>
+        <li>Game results and statistics</li>
+        <li>Your app preferences and settings</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">♟️</span>
+        Chess.com Integration
+      </h2>
+      <p>When you choose to use our optional Chess.com integration feature:</p>
+      <ul>
+        <li>We only request your Chess.com username</li>
+        <li>We access publicly available game data from Chess.com's public API</li>
+        <li>No passwords or private account information is collected</li>
+        <li>All Chess.com data is stored locally on your device</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">🤖</span>
+        AI Analysis Data
+      </h2>
+      <p>When you use the AI analyzer feature:</p>
+      <ul>
+        <li>Chess positions are sent to OpenAI's API for analysis</li>
+        <li>Only the current board position and game context are transmitted</li>
+        <li>No personal information or game history is sent</li>
+        <li>Analysis results are displayed immediately and not stored by us</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>
         <span class="icon">🔗</span>
         Third-Party Services
       </h2>
       
-      <p>ChessView uses the following external services to provide functionality:</p>
-      
-      <h3>Chess.com Public API</h3>
-      <p>When you enter your Chess.com username, we retrieve your public game data from Chess.com's official API. This data includes:</p>
-      <ul>
-        <li>Your public chess games and their details</li>
-        <li>Game moves, timestamps, and results</li>
-        <li>Player ratings (as publicly available on Chess.com)</li>
-      </ul>
-      <p>We do not store your Chess.com credentials or any personal account information.</p>
+      <h3>Chess.com API</h3>
+      <p>When using the Chess.com integration feature, we connect to Chess.com's public API to retrieve your publicly available game data. This connection is made directly from your device and is subject to Chess.com's own privacy policy and terms of service.</p>
       
       <h3>OpenAI API</h3>
-      <p>When you use the AI analyzer feature, chess positions are sent to OpenAI's API for analysis. This includes:</p>
+      <p>When using the AI analyzer feature, chess positions are sent to OpenAI's API for analysis. This data is processed according to <a href="https://openai.com/privacy" target="_blank">OpenAI's Privacy Policy</a>. We do not store or have access to this analysis data after it's displayed to you.</p>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">🔒</span>
+        Data Sharing
+      </h2>
+      
+      <p>We do not share, sell, or transmit your personal information or game data to any third parties, except for:</p>
       <ul>
-        <li>Board position data (piece locations)</li>
-        <li>Game context for accurate analysis</li>
+        <li>Chess.com API calls (only when you choose to import games)</li>
+        <li>OpenAI API calls (only when you choose to use AI analysis)</li>
       </ul>
-      <p>OpenAI processes this data according to their <a href="https://openai.com/privacy" target="_blank">Privacy Policy</a>.</p>
+      <p>These connections are made directly from your device and only contain the minimum data necessary for functionality.</p>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">🎯</span>
+        How We Use Your Information
+      </h2>
+      
+      <p>All data collected by ChessView is used solely to provide app functionality:</p>
+      <ul>
+        <li>Display and manage your chess games</li>
+        <li>Save your game progress and history</li>
+        <li>Import games from Chess.com (if you choose to use this feature)</li>
+        <li>Provide AI-powered position analysis (if you choose to use this feature)</li>
+        <li>Export games in standard chess formats (PGN, FEN)</li>
+      </ul>
     </div>
 
     <div class="card">
@@ -297,18 +356,15 @@
         Data Storage and Security
       </h2>
       
-      <p>ChessView prioritizes your privacy:</p>
+      <h3>Local Storage</h3>
+      <p>All your chess games and app data are stored locally on your device using iOS's secure data storage mechanisms. We do not maintain servers or databases with your information.</p>
+      
+      <h3>No Cloud Sync</h3>
+      <p>ChessView does not currently offer cloud synchronization. Your data remains exclusively on your device.</p>
       
       <div class="highlight-box">
-        <ul style="margin: 0;">
-          <li><strong>Local Storage:</strong> All your imported games and data are stored locally on your device</li>
-          <li><strong>No Central Database:</strong> We do not maintain servers or databases with your information</li>
-          <li><strong>Temporary Processing:</strong> API calls are processed in real-time and not stored by us</li>
-          <li><strong>No User Accounts:</strong> ChessView doesn't require registration or user accounts</li>
-        </ul>
+        <strong>Important:</strong> We do not store your games or personal data on our servers. Everything stays on your device.
       </div>
-      
-      <p>Your chess data remains under your control and is not shared with any parties beyond the necessary API calls for functionality.</p>
     </div>
 
     <div class="card">
@@ -334,27 +390,26 @@
     <div class="card">
       <h2>
         <span class="icon">⚖️</span>
-        Your Rights and Control
+        Your Rights and Choices
       </h2>
       
       <p>You have complete control over your data in ChessView:</p>
       
-      <h3>Data Access</h3>
-      <p>All your chess games and analysis are stored locally on your device and accessible to you at any time through the app.</p>
-      
-      <h3>Data Deletion</h3>
-      <p>You can delete individual games or all data by:</p>
       <ul>
-        <li>Using the delete functions within the app</li>
-        <li>Uninstalling the app (removes all local data)</li>
+        <li><strong>Access:</strong> You have full access to all your game data within the app</li>
+        <li><strong>Export:</strong> You can export your games at any time in standard formats</li>
+        <li><strong>Deletion:</strong> You can delete individual games or clear all data from within the app</li>
+        <li><strong>Feature Control:</strong> Chess.com integration and AI analysis are entirely optional and can be used only when you choose</li>
       </ul>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">👶</span>
+        Children's Privacy
+      </h2>
       
-      <h3>API Usage Control</h3>
-      <p>You control when external APIs are used:</p>
-      <ul>
-        <li>Chess.com API is only called when you choose to import games</li>
-        <li>OpenAI API is only used when you activate the AI analyzer</li>
-      </ul>
+      <p>ChessView does not knowingly collect personal information from children under 13. The app is designed to be safe for users of all ages, with all data stored locally on the device.</p>
     </div>
 
     <div class="card">
