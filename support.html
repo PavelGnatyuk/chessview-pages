@@ -5,80 +5,288 @@
   <title>Support – ChessView</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f7;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
     }
+    
+    .hero {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 2rem 0;
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .hero p {
+      font-size: 1.1rem;
+      margin: 1rem 0 0;
+      opacity: 0.9;
+    }
+    
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
       padding: 2rem;
-      background: #fff;
-      margin-top: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     }
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 2rem;
+    
+    .card h2 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    
+    .icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+    }
+    
     a {
-      color: #007aff;
+      color: #667eea;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
     }
+    
     a:hover {
+      color: #764ba2;
       text-decoration: underline;
     }
+    
+    .contact-info {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .contact-info a {
+      color: white;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    .faq-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #667eea;
+    }
+    
+    .faq-item strong {
+      color: #2c3e50;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .feature-item {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      transition: background 0.2s ease;
+    }
+    
+    .feature-item:hover {
+      background: #e9ecef;
+    }
+    
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .link-item {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .link-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+      color: white;
+      text-decoration: none;
+    }
+    
     .footer {
       text-align: center;
-      margin: 2rem 0;
-      font-size: 0.85rem;
-      color: #999;
+      padding: 2rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 2rem;
     }
-    ul {
-      padding-left: 1.2rem;
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 0 1rem 2rem;
+      }
+      
+      .card {
+        padding: 1.5rem;
+      }
+      
+      .features-grid,
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Support – ChessView</h1>
-    <p>Thanks for using <strong>ChessView</strong>, a fast and focused PGN viewer and analyzer for iOS.</p>
-
-    <h2>Contact Us</h2>
-    <p>If you need help, found a bug, or have feedback, contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:privacy@pavelgnatyuk.com">privacy@pavelgnatyuk.com</a></p>
-
-    <h2>Frequently Asked Questions</h2>
-    <ul>
-      <li><strong>Can I import PGN files?</strong><br>Yes, ChessView supports PGN file import via the Files app.</li>
-      <li><strong>Does ChessView work offline?</strong><br>Yes, all features are fully offline.</li>
-      <li><strong>Does it support variations and comments?</strong><br>Yes, it displays both.</li>
-    </ul>
-
-    <h2>Key Features</h2>
-    <ul>
-      <li>Import and view PGN games</li>
-      <li>Supports variations and annotations</li>
-      <li>Lightweight, fast, no ads</li>
-      <li>Dark mode support</li>
-    </ul>
-
-    <h2>Useful Links</h2>
-    <ul>
-      <li><a href="https://chessview.pavelgnatyuk.com/privacy_policy.html">Privacy Policy</a></li>
-      <li><a href="https://apps.apple.com">App Store Page</a> (placeholder)</li>
-    </ul>
+  <div class="hero">
+    <h1>♔ ChessView Support</h1>
+    <p>Fast and focused PGN viewer and analyzer for iOS</p>
   </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>
+        <span class="icon">📧</span>
+        Contact Us
+      </h2>
+      <p>Need help, found a bug, or have feedback? We'd love to hear from you!</p>
+      <div class="contact-info">
+        <strong>Email:</strong> <a href="mailto:privacy@pavelgnatyuk.com">privacy@pavelgnatyuk.com</a>
+        <p style="margin: 0.5rem 0 0; font-size: 0.9rem; opacity: 0.9;">We typically respond within 24 hours</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">❓</span>
+        Frequently Asked Questions
+      </h2>
+      
+      <div class="faq-item">
+        <strong>Can I import PGN files?</strong>
+        Yes! ChessView supports PGN file import via the Files app. Simply tap "Import" and select your PGN files.
+      </div>
+      
+      <div class="faq-item">
+        <strong>Does ChessView work offline?</strong>
+        Absolutely! All features work completely offline. No internet connection required.
+      </div>
+      
+      <div class="faq-item">
+        <strong>Does it support variations and comments?</strong>
+        Yes! ChessView displays both game variations and detailed annotations for comprehensive game analysis.
+      </div>
+      
+      <div class="faq-item">
+        <strong>How does the AI analyzer work?</strong>
+        ChessView includes an AI analyzer that evaluates chess positions and suggests the best moves, helping you understand the strengths and weaknesses of each position.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">⭐</span>
+        Key Features
+      </h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <strong>📁 PGN Import</strong><br>
+          Import and view PGN games seamlessly
+        </div>
+        <div class="feature-item">
+          <strong>🔀 Variations Support</strong><br>
+          Full support for game variations and annotations
+        </div>
+        <div class="feature-item">
+          <strong>🚀 Lightweight & Fast</strong><br>
+          Optimized performance, no ads
+        </div>
+        <div class="feature-item">
+          <strong>🤖 AI Analyzer</strong><br>
+          Built-in AI engine for position analysis
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span class="icon">🔗</span>
+        Useful Links
+      </h2>
+      <div class="links-grid">
+        <a href="https://chessview.pavelgnatyuk.com/privacy_policy.html" class="link-item">
+          <strong>🔒 Privacy Policy</strong>
+          <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Learn how we protect your data</div>
+        </a>
+        <a href="https://apps.apple.com" class="link-item">
+          <strong>📱 App Store</strong>
+          <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Download or rate the app</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div class="footer">
-    &copy; 2025 ChessView by Pavel Gnatyuk
+    &copy; 2025 ChessView by Pavel Gnatyuk • Made with ♔ for chess enthusiasts
   </div>
 </body>
 </html>
